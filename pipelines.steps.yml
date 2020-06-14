@@ -1,3 +1,34 @@
+resources:
+  # Git repo for back-end source
+  - name: be_gitRepo
+    type: GitRepo
+    configuration:
+      path: sdemo/java-backend
+      gitProvider: omerh_github
+ 
+  # Git repo for front-end source
+  - name: fe_gitRepo
+    type: GitRepo
+    configuration:
+      path: sdemo/vue-frontend
+      gitProvider: omerh_github
+ 
+  # Build info for the application
+  - name: appl_build_info
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: omerh_aol
+      buildName: backend_build
+      buildNumber: 1
+ 
+  # Build info for the promoted application
+  - name: appl_promoted_build_info
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: omerh_aol
+      buildName: backend_build
+      buildNumber: 1
+      
 pipelines:
   - name: demo_application
     steps:
